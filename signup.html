@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StacklyVerse - Create Account</title>
+
+<style>
+
+:root{
+--navy:#050d1f;
+--navy-mid:#0a1a38;
+--cyan:#00e5ff;
+--orange:#ff6b2b;
+--white:#ffffff;
+--muted:#8899bb;
+--border:rgba(255,255,255,.08);
+--card-bg:rgba(255,255,255,.04);
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:var(--navy);
+color:var(--white);
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(5,13,31,.85);
+backdrop-filter:blur(20px);
+border-bottom:1px solid var(--border);
+z-index:1000;
+}
+
+.logo{
+font-size:1.7rem;
+font-weight:800;
+text-decoration:none;
+color:white;
+}
+
+.logo span{
+color:var(--cyan);
+}
+
+.nav-links{
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+font-size:.95rem;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:var(--cyan);
+}
+
+/* PAGE */
+
+.signup-page{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:120px 20px 60px;
+position:relative;
+overflow:hidden;
+}
+
+.signup-page::before{
+content:'';
+position:absolute;
+width:700px;
+height:700px;
+background:rgba(0,229,255,.08);
+border-radius:50%;
+filter:blur(120px);
+top:-250px;
+right:-250px;
+}
+
+.signup-page::after{
+content:'';
+position:absolute;
+width:600px;
+height:600px;
+background:rgba(255,107,43,.08);
+border-radius:50%;
+filter:blur(120px);
+bottom:-250px;
+left:-250px;
+}
+
+/* CARD */
+
+.signup-card{
+width:100%;
+max-width:520px;
+background:var(--card-bg);
+backdrop-filter:blur(20px);
+border:1px solid var(--border);
+border-radius:24px;
+padding:40px;
+position:relative;
+z-index:2;
+box-shadow:0 20px 80px rgba(0,0,0,.4);
+}
+
+.back-home{
+display:inline-block;
+margin-bottom:25px;
+text-decoration:none;
+color:var(--cyan);
+font-size:.9rem;
+font-weight:600;
+}
+
+.brand{
+text-align:center;
+font-size:2rem;
+font-weight:800;
+margin-bottom:15px;
+}
+
+.brand span{
+color:var(--cyan);
+}
+
+.signup-card h1{
+text-align:center;
+font-size:2rem;
+margin-bottom:10px;
+}
+
+.subtitle{
+text-align:center;
+color:var(--muted);
+margin-bottom:30px;
+line-height:1.6;
+}
+
+/* FORM */
+
+.signup-form{
+display:grid;
+gap:16px;
+}
+
+.signup-form input{
+padding:15px 18px;
+background:rgba(255,255,255,.04);
+border:1px solid var(--border);
+border-radius:12px;
+color:white;
+font-size:.95rem;
+outline:none;
+}
+
+.signup-form input:focus{
+border-color:var(--cyan);
+}
+
+.signup-btn{
+padding:15px;
+border:none;
+border-radius:12px;
+background:var(--cyan);
+color:var(--navy);
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+}
+
+.signup-btn:hover{
+transform:translateY(-2px);
+}
+
+/* DIVIDER */
+
+.divider{
+text-align:center;
+margin:25px 0;
+color:var(--muted);
+position:relative;
+}
+
+.divider::before,
+.divider::after{
+content:'';
+position:absolute;
+top:50%;
+width:40%;
+height:1px;
+background:var(--border);
+}
+
+.divider::before{
+left:0;
+}
+
+.divider::after{
+right:0;
+}
+
+/* SOCIAL */
+
+.social-buttons{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
+
+.social-btn{
+padding:14px;
+background:rgba(255,255,255,.04);
+border:1px solid var(--border);
+border-radius:12px;
+color:white;
+cursor:pointer;
+transition:.3s;
+}
+
+.social-btn:hover{
+border-color:var(--cyan);
+}
+
+/* LOGIN */
+
+.login-link{
+margin-top:25px;
+text-align:center;
+color:var(--muted);
+}
+
+.login-link a{
+color:var(--cyan);
+text-decoration:none;
+font-weight:600;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.nav-links{
+display:none;
+}
+
+.signup-card{
+padding:30px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+
+<a href="index.html" class="logo">
+Stackly<span>Verse</span>
+</a>
+
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="contact.html">Contact</a>
+</div>
+
+</nav>
+
+<section class="signup-page">
+
+<div class="signup-card">
+
+<a href="index.html" class="back-home">
+← Back to Home
+</a>
+
+<div class="brand">
+Stackly<span>Verse</span>
+</div>
+
+<h1>Create Account</h1>
+
+<p class="subtitle">
+Join 850,000+ entrepreneurs, investors and creators building their digital identity.
+</p>
+
+<form class="signup-form">
+
+<input type="text" placeholder="Full Name" required>
+
+<input type="email" placeholder="Email Address" required>
+
+<input type="password" placeholder="Password" required>
+
+<input type="password" placeholder="Confirm Password" required>
+
+<button class="signup-btn">
+Create Free Account
+</button>
+
+</form>
+
+<div class="divider">
+OR
+</div>
+
+<div class="social-buttons">
+
+<button class="social-btn">
+Google
+</button>
+
+<button class="social-btn">
+GitHub
+</button>
+
+</div>
+
+<div class="login-link">
+Already have an account?
+<a href="login.html">Login</a>
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+document.querySelector('.signup-form')
+.addEventListener('submit',function(e){
+
+e.preventDefault();
+
+alert('Account Created Successfully!');
+
+});
+
+</script>
+
+</body>
+</html>

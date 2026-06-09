@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 - Page Not Found</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
+    color:#fff;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    max-width:700px;
+}
+
+.error-code{
+    font-size:8rem;
+    font-weight:800;
+    line-height:1;
+    background:linear-gradient(90deg,#38bdf8,#818cf8);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin-bottom:15px;
+}
+
+h1{
+    font-size:2.5rem;
+    margin-bottom:15px;
+}
+
+p{
+    color:#cbd5e1;
+    font-size:1.1rem;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+.btn-group{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:50px;
+    font-weight:600;
+    transition:0.3s ease;
+    display:inline-block;
+}
+
+.home-btn{
+    background:#38bdf8;
+    color:#fff;
+}
+
+.home-btn:hover{
+    background:#0ea5e9;
+    transform:translateY(-3px);
+}
+
+.back-btn{
+    border:2px solid #38bdf8;
+    color:#38bdf8;
+}
+
+.back-btn:hover{
+    background:#38bdf8;
+    color:#fff;
+    transform:translateY(-3px);
+}
+
+.social-icon{
+    font-size:70px;
+    margin-bottom:20px;
+}
+
+@media(max-width:768px){
+    .error-code{
+        font-size:6rem;
+    }
+
+    h1{
+        font-size:2rem;
+    }
+
+    p{
+        font-size:1rem;
+    }
+}
+
+@media(max-width:480px){
+    .error-code{
+        font-size:5rem;
+    }
+
+    h1{
+        font-size:1.6rem;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .btn-group{
+        flex-direction:column;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="social-icon">📱</div>
+
+    <div class="error-code">404</div>
+
+    <h1>Oops! Post Not Found</h1>
+
+    <p>
+        The page you're looking for may have been removed,
+        renamed, or is temporarily unavailable.
+        Let's get you back to your social world.
+    </p>
+
+    <div class="btn-group">
+        <a href="index.html" class="btn home-btn">🏠 Back to Home</a>
+
+        <a href="javascript:history.back()" class="btn back-btn">
+            ← Go Back
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>

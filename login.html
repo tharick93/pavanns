@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DomainVerse Login</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#050d1f;
+overflow:hidden;
+position:relative;
+}
+
+/* Background Glow */
+
+body::before{
+content:'';
+position:absolute;
+width:600px;
+height:600px;
+background:rgba(0,229,255,.08);
+border-radius:50%;
+filter:blur(120px);
+top:-200px;
+right:-200px;
+}
+
+body::after{
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+background:rgba(255,107,43,.08);
+border-radius:50%;
+filter:blur(120px);
+bottom:-200px;
+left:-200px;
+}
+
+/* Login Card */
+
+.login-container{
+width:100%;
+max-width:450px;
+padding:40px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+border-radius:24px;
+backdrop-filter:blur(20px);
+box-shadow:0 20px 60px rgba(0,0,0,.4);
+position:relative;
+z-index:10;
+}
+
+.logo{
+text-align:center;
+font-size:2rem;
+font-weight:800;
+color:#fff;
+margin-bottom:10px;
+}
+
+.logo span{
+color:#00e5ff;
+}
+
+.subtitle{
+text-align:center;
+color:#8899bb;
+margin-bottom:30px;
+}
+
+/* Form */
+
+.form-group{
+margin-bottom:18px;
+}
+
+.form-group label{
+display:block;
+margin-bottom:8px;
+color:#fff;
+font-size:.9rem;
+}
+
+.form-group input,
+.form-group select{
+width:100%;
+padding:14px;
+border-radius:12px;
+border:1px solid rgba(255,255,255,.08);
+background:rgba(255,255,255,.05);
+color:#fff;
+outline:none;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+border-color:#00e5ff;
+}
+
+.form-group select option{
+color:#000;
+}
+
+.login-btn{
+width:100%;
+padding:15px;
+border:none;
+border-radius:12px;
+background:#00e5ff;
+color:#050d1f;
+font-size:1rem;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+}
+
+.login-btn:hover{
+transform:translateY(-2px);
+}
+
+.back-home{
+display:block;
+text-align:center;
+margin-top:20px;
+color:#00e5ff;
+text-decoration:none;
+}
+
+.back-home:hover{
+text-decoration:underline;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-container">
+
+<div class="logo">
+Stackly<span>Verse</span>
+</div>
+
+<p class="subtitle">
+Login to continue
+</p>
+
+<form id="loginForm">
+
+<div class="form-group">
+<label>Username</label>
+<input type="text" required>
+</div>
+
+<div class="form-group">
+<label>Password</label>
+<input type="password" required>
+</div>
+
+<div class="form-group">
+<label>Login As</label>
+<select id="role" required>
+<option value="">Select Role</option>
+<option value="user.html">User</option>
+<option value="admin.html">Admin</option>
+</select>
+</div>
+
+<button type="submit" class="login-btn">
+Login
+</button>
+
+</form>
+
+<a href="index.html" class="back-home">
+← Back to Home
+</a>
+
+</div>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+const role = document.getElementById("role").value;
+
+if(role){
+window.location.href = role;
+}else{
+alert("Please select a role");
+}
+
+});
+</script>
+
+</body>
+</html>
