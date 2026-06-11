@@ -11,7 +11,12 @@ function fillSearch(val) {
 function doBigSearch() {
   const input = document.getElementById('bigSearchInput');
   const grid = document.getElementById('searchResultsGrid');
-  const q = input.value.trim().toLowerCase().replace(/\s+/g, '') || 'domain';
+  const rawQuery = input.value.trim();
+  if (!rawQuery) {
+    window.showToast('Enter something', 'error');
+    return;
+  }
+  const q = rawQuery.toLowerCase().replace(/\s+/g, '');
   const exts = [
     { ext: '.com', price: '$12.99/yr', avail: Math.random() > 0.3 },
     { ext: '.io',  price: '$39.99/yr', avail: Math.random() > 0.4 },
@@ -48,10 +53,18 @@ document.querySelectorAll('.domain-search-bar input').forEach(inp => {
     if (e.key === 'Enter') e.target.nextElementSibling && e.target.nextElementSibling.click();
   });
 });
-document.querySelector('.domain-search-bar button') &&
-  document.querySelector('.domain-search-bar button').addEventListener('click', () => {
-    window.showToast('Searching domains...', 'success');
+const heroSearchInput = document.querySelector('.domain-search-bar input');
+const heroSearchButton = document.querySelector('.domain-search-bar button');
+if (heroSearchButton && heroSearchInput) {
+  heroSearchButton.addEventListener('click', () => {
+    const query = heroSearchInput.value.trim();
+    if (!query) {
+      window.showToast('Enter something', 'error');
+      return;
+    }
+    window.showToast(`Searching domains for "${query}"...`, 'success');
   });
+}
 
 /* ── Lazy image placeholder animation ── */
 document.querySelectorAll('.blog-img').forEach(img => {

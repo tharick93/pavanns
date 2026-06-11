@@ -161,7 +161,7 @@ body::before {
 ═══════════════════════════════ */
 .navbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  padding: 0 24px; height: 70px;
+  padding: 0 24px; height: 90px;
   display: flex; align-items: center;
   background: rgba(5,13,31,0.7);
   backdrop-filter: blur(24px);
@@ -231,7 +231,7 @@ body::before {
 /* ── Mobile nav ── */
 .mobile-nav {
   display: none; position: fixed;
-  top: 70px; left: 0; right: 0; bottom: 0;
+  top: 90px; left: 0; right: 0; bottom: 0;
   background: rgba(5,13,31,0.98);
   backdrop-filter: blur(24px);
   z-index: 999; flex-direction: column;
@@ -503,4 +503,64 @@ body::before {
   .logo-icon{
     height: 35px;
   }
+}
+/* Mobile Fix */
+@media screen and (max-width: 768px) {
+
+    html,
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    img,
+    video,
+    iframe {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .container,
+    .wrapper,
+    .section,
+    .row {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Fix flex layouts */
+    .flex,
+    .d-flex {
+        flex-wrap: wrap;
+    }
+
+    /* Fix grid layouts */
+    .grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Prevent long text from causing overflow */
+    h1, h2, h3, h4, h5, h6, p, span, a {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* Remove accidental horizontal movement */
+    [style*="translateX"],
+    [style*="left:"],
+    [style*="right:"] {
+        max-width: 100%;
+    }
+}
+html,
+body {
+    overflow-x: hidden;
 }
