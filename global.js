@@ -228,4 +228,21 @@
     });
   });
 
+  /* ── Footer newsletter submit (redirect to 404) ── */
+  document.querySelectorAll('.newsletter-form').forEach(formWrap => {
+    const input = formWrap.querySelector('input[type="email"]');
+    const btn = formWrap.querySelector('button');
+    if (!input || !btn) return;
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const val = input.value.trim();
+      if (val && val.includes('@')) {
+        window.showToast('Subscribed — redirecting...', 'success');
+        setTimeout(() => { window.location.href = '404.html'; }, 500);
+      } else {
+        window.showToast('Please enter a valid email.', 'error');
+      }
+    });
+  });
+
 })();

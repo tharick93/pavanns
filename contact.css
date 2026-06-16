@@ -118,6 +118,19 @@
   font-family:'DM Sans',sans-serif;
 }
 
+/* Make select dropdown options easier to read on hover */
+.contact-form select option{
+  color:var(--navy);
+  background:#ffffff;
+}
+
+/* When the select is focused or option hovered, highlight with cyan */
+.contact-form select:focus option,
+.contact-form select option:hover{
+  background:var(--cyan);
+  color:var(--navy);
+}
+
 .contact-form input:focus,
 .contact-form textarea:focus,
 .contact-form select:focus{

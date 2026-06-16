@@ -23,6 +23,11 @@ if (contactForm) {
 
       this.reset();
 
+      // Redirect to 404 page after successful submission
+      setTimeout(() => {
+        window.location.href = '404.html';
+      }, 700);
+
     } else {
 
       window.showToast(
